@@ -29,8 +29,8 @@ pipeline {
     stages {
         stage('检出') {
             steps {
-                git url: "https://gitee.com/will-we/ruoyi-vue-pro.git",
-                        branch: "devops"
+                git url: "https://github.com/gebaocai/ruoyi-vue-pro.git",
+                        branch: "master"
             }
         }
 
@@ -49,7 +49,7 @@ pipeline {
 
         stage('部署') {
             steps {
-                sh 'cp -f ' + ' bin/deploy.sh ' + "${env.APP_DEPLOY_BASE_DIR}" + "${env.APP_NAME}"
+                sh 'cp -f ' + ' script/shell/deploy.sh ' + "${env.APP_DEPLOY_BASE_DIR}" + "${env.APP_NAME}"
                 sh 'cp -f ' + "${env.APP_NAME}" + '/target/*.jar ' + "${env.APP_DEPLOY_BASE_DIR}" + "${env.APP_NAME}" +'/build/'
                 archiveArtifacts "${env.APP_NAME}" + '/target/*.jar'
                 sh 'chmod +x ' + "${env.APP_DEPLOY_BASE_DIR}" + "${env.APP_NAME}" + '/deploy.sh'
