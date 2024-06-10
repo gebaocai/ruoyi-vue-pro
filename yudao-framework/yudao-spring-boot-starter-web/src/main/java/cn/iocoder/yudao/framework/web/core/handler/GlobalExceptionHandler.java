@@ -283,6 +283,7 @@ public class GlobalExceptionHandler {
      */
     private CommonResult<?> handleTableNotExists(Throwable ex) {
         String message = ExceptionUtil.getRootCauseMessage(ex);
+        log.error(message);
         if (!message.contains("doesn't exist")) {
             return null;
         }
