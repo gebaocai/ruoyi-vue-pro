@@ -50,14 +50,14 @@ spring:
           lazy: true # 开启懒加载，保证启动速度
           url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
           username: root
-          password: '@123$%^abc'
+          password: '123456'
 
   # Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
   redis:
     host: 127.0.0.1 # 地址
     port: 6379 # 端口
     database: 1 # 数据库索引
-    password: gebaocai # 密码，建议生产环境开启
+    #password: gebaocai # 密码，建议生产环境开启
 
 --- #################### 定时任务相关配置 ####################
 
