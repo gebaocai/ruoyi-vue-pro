@@ -55,7 +55,6 @@ public class HuaweiSmsClient extends AbstractSmsClient {
         Assert.notEmpty(properties.getApiSecret(), "apiSecret 不能为空");
     }
 
-    @Override
     protected void doInit() {
     }
 
